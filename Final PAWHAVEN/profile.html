@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Your PAWHAVEN account, saved enquiries and demo orders.">
+  <title>PAWHAVEN | My Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/final.css">
+  <script src="js/theme.js"></script>
+  <script defer src="vendor/jquery.min.js"></script>
+  <script defer src="vendor/bootstrap.bundle.min.js"></script>
+  <script defer src="js/core.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/shop.js"></script>
+  <script defer src="js/pets.js"></script>
+  <script defer src="js/contact.js"></script>
+  <script defer src="js/api.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div aria-hidden="true" id="scroll-progress"><span></span></div>
+  <div class="site-layout">
+    <header class="site-header">
+      <nav class="navbar navbar-expand-xl navbar-light" aria-label="Main navigation">
+        <div class="container">
+          <a class="navbar-brand logo" href="index.html">PAW <span>HAVEN</span><img class="logo-img" src="images/logo.png" width="30" height="30" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+              <li class="nav-item"><a class="nav-link" href="pets.html">Our Pets</a></li>
+              <li class="nav-item"><a class="nav-link" href="adoption.html">Adoption</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+              <a class="nav-link" href="cart.html" aria-label="Shopping basket">Basket (<span data-cart-count>0</span>)</a>
+              <a class="btn btn-primary btn-sm account-link" href="profile.html">My profile</a>
+              <button class="theme-button" id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="page-hero">
+        <div class="container">
+          <p class="breadcrumb"><a href="index.html">Home</a> / My Profile</p>
+          <h1>My Profile</h1>
+          <p class="section-intro">Your account details, saved enquiries and demo orders — all in one place.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div id="profile-loading" class="form-card">
+            <p>Loading your profile…</p>
+            <p class="small muted">If you are not logged in, you will be redirected to the login page.</p>
+          </div>
+
+          <div id="profile-content" hidden>
+            <section class="form-card profile-summary" aria-labelledby="profile-heading">
+              <div>
+                <p class="eyebrow">ACCOUNT OVERVIEW</p>
+                <h2 id="profile-heading">Welcome, <span id="profile-name"></span>!</h2>
+                <p><strong>Email:</strong> <span id="profile-email"></span></p>
+                <p><strong>Phone:</strong> <span id="profile-phone"></span></p>
+                <p class="small muted" id="profile-created"></p>
+              </div>
+              <div class="profile-actions">
+                <a class="btn btn-primary" href="shop.html">Explore shop</a>
+                <a class="btn btn-outline-primary" href="cart.html">View basket</a>
+                <button class="btn btn-outline-secondary" id="logout" type="button">Log out</button>
+              </div>
+            </section>
+
+            <section class="section" aria-labelledby="orders-heading">
+              <div class="section-head"><div><p class="eyebrow">YOUR ACTIVITY</p><h2 id="orders-heading">My Orders</h2></div></div>
+              <div class="record-list" id="profile-orders" aria-live="polite"></div>
+            </section>
+
+            <section class="section" aria-labelledby="requests-heading">
+              <div class="section-head"><div><p class="eyebrow">MESSAGES & REQUESTS</p><h2 id="requests-heading">My Enquiries</h2></div></div>
+              <div class="record-list" id="profile-requests" aria-live="polite"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><strong>PAWHAVEN</strong><p>A friendly pet shop &amp; adoption community.</p><p class="small">Student demonstration. No real purchases or adoption requests are sent.</p></div>
+        <div><p>Miras Kamaladin &middot; Ayaulym Amankeldykyzy &middot; Dias Aibekuly</p><p>SE-2504 &middot; Final Project</p><a href="shop.html">Shop</a> &middot; <a href="contact.html">Contact</a></div>
+      </div>
+      <div class="container js-tool-row"><button class="btn btn-outline-light btn-sm" id="sound-toggle" type="button" aria-pressed="false">Sound: Off</button><span class="live-clock" id="live-clock"></span></div>
+    </footer>
+  </div>
+  <div id="jquery-toast" role="status" aria-live="polite"></div>
+  <noscript><p class="storage-warning">Please enable JavaScript to use your account and saved activity.</p></noscript>
+</body>
+</html>
